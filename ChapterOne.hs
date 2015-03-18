@@ -1,40 +1,32 @@
 module ChapterOne where
 
+import Data.Char
 
-main = print( negsInList [1,-1,2] )
-	print( negsInList [] )
-	print( negsInList [1,0,3,4,5] )
-	print( negsInList [-21,-1,-2])
+--1
+negsInList xs = length([ x | x <- xs, x < 0])
 
---negsInList: 
-negsInList xs = [ x | x <- xs && x > 0 ]
+oddsInList xs = length( [ x | x <- xs, odd x ])
 
-{-
-oddsInList =
+capsInList chars = length( [ char | char <- chars, isUpper char ])
 
+sumOdd xs = sum([ x | x <- xs, mod x 2 == 1])
 
-capsInList =
+--2
+receipt = [(3,4), (5,6)]
 
+getQuantities xs = [ fst x | x <- xs]
 
-sumOdd = 
-
-
-getQuantities = 
-
-getPrices =
+getPrices xs = [ snd x | x <- xs]
 
 
-getTotal =
+getTotal xs = sum( [fst x * snd x | x <- xs ] )
 
+--3
+doubleAll xs = [ [ 2*x | x<-xxs ] | xxs<-xs ]
 
-doubleAll =
+doubleFirstList xs = [ 2*x | x <- head(xs) ]
 
+doubleSecondList xs = [ 2*x | x <- head(tail(xs)) ]
 
-doubleFirstList =
+sumListItems xs = [ sum([ x | x<-xxs ]) | xxs<-xs ]
 
-
-doubleSecondList =
-
-sumListItems =
-
--}
